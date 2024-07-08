@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.t2i">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
+
+    <!-- Optional hardware feature -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/ic_app_icon"
+        android:label="Image To Text"
+        android:theme="@style/Theme.T2I"
+        tools:targetApi="31">
+
+        <!-- Activities -->
+        <activity android:name=".screens.ProfileActivity" android:exported="false" />
+        <activity android:name=".screens.ResetPassword" android:exported="false" />
+        <activity android:name=".screens.RegisterActivity" android:exported="false" />
+        <activity android:name=".screens.LoginActivity" android:exported="false" />
+        <activity android:name=".screens.HistoryActivity" />
+        <activity android:name=".screens.MainActivity" />
+
+        <!-- Launcher activity -->
+        <activity
+            android:name=".screens.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- FileProvider for sharing files -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.t2i.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:ignore="ExtraText">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- Google Sign-In configuration -->
+        <meta-data
+            android:name="com.google.android.gms.auth.api.signin.GoogleSignInOptions.DEFAULT_SIGN_IN"
+            android:value="@string/default_web_client_id" />
+
+    </application>
+
+</manifest>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- New colors for Google icon -->
+    <color name="google_orange">#FFA726</color> <!-- Orange -->
+    <color name="google_yellow">#FFEB3B</color> <!-- Yellow -->
+    <color name="google_blue">#4285F4</color>
+    <color name="google_red">#EA4335</color>
+    <color name="google_green">#34A853</color>
+
+</resources>
